@@ -1,0 +1,8 @@
+# python2 tk
+
+sudo wget https://bootstrap.pypa.io/get-pip.py
+sudo python2 get-pip.py
+sudo pip install -U nltk
+sudo python2 -c "import nltk; nltk.download()" &
+sleep 2
+sudo pip install -U numpy matplotlib networkx
