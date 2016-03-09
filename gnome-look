@@ -1,0 +1,22 @@
+echo "Installing tweak tool..."
+sudo dnf -y install gnome-tweak-tool
+
+echo "Downloading Super Flat Remix icons..."
+wget https://github.com/daniruiz/Super-Flat-Remix/archive/master.zip
+unzip master.zip
+rm master.zip &
+mv "Super-Flat-Remix-master/Super Flat Remix" /usr/share/icons/ &
+
+echo "Downloading Breeze-Snow cursors..."
+wget https://copy.com/1zdQbeuECFTI7VTX/Breeze-Snow.tgz?download=1
+tar -xf Breeze-Snow.tgz
+rm Breeze-Snow.tgz &
+mv "Breeze-Snow" /usr/share/icons &
+
+echo "Installing Arc GTK theme..."
+cd /etc/yum.repos.d/
+sudo wget http://download.opensuse.org/repositories/home:Horst3180/Fedora_22/home:Horst3180.repo
+sudo yum -y install arc-theme
+cd ~
+
+echo "Have fun"
