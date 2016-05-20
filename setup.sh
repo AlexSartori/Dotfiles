@@ -46,6 +46,6 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo -e "\e[1m==========    Sourcing NLTK setup...    ==========\e[21m"
-    source nltk
+    source ./nltk
 fi
 
