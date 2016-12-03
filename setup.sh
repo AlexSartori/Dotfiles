@@ -49,3 +49,6 @@ then
     source nltk
 fi
 
+# sudo dnf copr enable rommon/telegram
+# sudo dnf install telegram-desktop
+
