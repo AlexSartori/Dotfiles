@@ -1,9 +1,0 @@
-# python2 tk
-
-sudo wget https://bootstrap.pypa.io/get-pip.py
-sudo python2 get-pip.py
-sudo pip install -U nltk
-# sudo python2 -c "import nltk; nltk.download()" &
-sleep 2
-sudo dnf install python-devel freetype-devel libpng-devel kernel-devel gcc-c++
-sudo pip install -U numpy matplotlib networkx

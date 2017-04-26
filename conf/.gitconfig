@@ -1,0 +1,17 @@
+[core]
+	editor = vim
+[user]
+	email = alex.sartori1997@gmail.com
+	name = Alex Sartori
+[help]
+	autocorrect = 10
+[push]
+	default = nothing
+[alias]
+	co = checkout
+	br = branch
+	cm = "commit -m"
+	s = status
+	unstage = "reset HEAD --"
+	tree = log --graph --decorate --pretty=oneline\n--abbrev-commit
+	last = log -1 HEAD
