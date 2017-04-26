@@ -30,8 +30,12 @@ fi
 JAVA_HOME=/usr/java/latest
 export JAVA_HOME
 
+ANT_HOME=$HOME/ant/apache-ant-1.10.1/
+export ANT_HOME
+
 PATH=$PATH:$JAVA_HOME/bin
-PATH=$PATH:~/Android/Sdk/tools
-PATH=$PATH:~/Android/Sdk/platform-tools
+PATH=$PATH:$ANT_HOME/bin
+PATH=$PATH:$HOME/Android/Sdk/tools
+PATH=$PATH:$HOME/Android/Sdk/platform-tools
 export PATH
 
