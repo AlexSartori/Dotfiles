@@ -18,3 +18,10 @@ sudo cp -r fonts/* /usr/share/fonts/
 echo "    Refreshing font cache..."
 fc-cache -f -v > /dev/null
 
+echo "[*] Enabling RPM Fusion repos..."
+sudo dnf install rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+echo "[*] Enabling copr repos... (mosquito/brackets & rommon/telegram)"
+sudo dnf copr enable mosquito/brackets rommon/telegram
+echo "[*] Enabling last repos... (chrome, skype, megasync, insync, intellinuxgraphics)"
+sudo cp repos/* /etc/yum.repos.d/
+
