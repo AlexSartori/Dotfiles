@@ -33,10 +33,10 @@ cp -r gimp_brushes/* ~/.gimp-*/brushes
 echo "[*] Enabling RPM Fusion repos..."
 sudo dnf install rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 echo "[*] Enabling copr repos... 
-	mosquito/brackets 
-	mosquito/atom 
-	heikoada/gtk-themes"
-sudo dnf copr enable mosquito/brackets mosquito/atom heikoada/gtk-themes
+    mosquito/brackets 
+    mosquito/atom 
+    heikoada/gtk-themes"
+sudo dnf copr enable mosquito/brackets mosquito/atom heikoada/gtk-themes ribenakid/puzzles
 echo "[*] Enabling last repos... (chrome, skype, megasync, insync, intellinuxgraphics)"
 sudo cp repos/* /etc/yum.repos.d/
 
