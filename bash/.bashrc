@@ -15,27 +15,28 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 
+PS1="┌ \u: \W\n└─ \$ "
 # Powerline daemon
 # -------------------------------------------------------------------
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+if [[ $TERM != "rxvt-unicode" && $TERM != "xterm" ]]; then
+	if [ -f `which powerline-daemon` ]; then
+	  powerline-daemon -q
+	  POWERLINE_BASH_CONTINUATION=1
+	  POWERLINE_BASH_SELECT=1
+	  . /usr/share/powerline/bash/powerline.sh
+	fi
 fi
 
 
 # Path definitions
 # -------------------------------------------------------------------
-JAVA_HOME=/usr/java/latest
+JAVA_HOME=/usr/lib/jvm/java/
 export JAVA_HOME
 
-ANT_HOME=$HOME/ant/apache-ant-1.10.1/
+ANT_HOME=/usr/share/ant
 export ANT_HOME
 
 PATH=$PATH:$JAVA_HOME/bin
 PATH=$PATH:$ANT_HOME/bin
-PATH=$PATH:$HOME/Android/Sdk/tools
-PATH=$PATH:$HOME/Android/Sdk/platform-tools
 export PATH
 
