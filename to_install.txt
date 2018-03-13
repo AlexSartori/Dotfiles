@@ -2,6 +2,7 @@
 # Jetbrains Toolbox
 # Lightworks
 # Rhinoceros
+# xdgurl
 
 ardour5
 atom
