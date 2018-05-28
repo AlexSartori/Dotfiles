@@ -16,9 +16,9 @@ conf-files:
 
 hosts-file:
 	@echo -e "\n\n$(BOLD)### HOSTS-FILE$(RST)"
-	wget -q https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-	sudo mv /etc/host /etc/hosts.old
-	sudo mv hosts /etc/hosts
+	# wget -q https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+	sudo mv /etc/hosts /etc/hosts.old
+	sudo mv conf/hosts /etc/hosts
 	sudo systemctl restart NetworkManager # Empty DNS cache
 
 fonts:
@@ -48,3 +48,4 @@ dnf-software:
 	vim /tmp/dnfsoft
 	xargs --arg-file="/tmp/dnfsoft" sudo dnf install
 	#gem install lolcat
+	#sudo cp other/whatsapp.desktop /usr/share/applications/
