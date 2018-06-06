@@ -1,8 +1,13 @@
 # Arduino IDE
+# Netbeans
 # Jetbrains Toolbox
 # Lightworks
 # Rhinoceros
+# yEd
 # xdgurl
+# even-better-ls
+
+# Gems: lolcat, lolcommits
 
 ardour5
 atom

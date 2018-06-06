@@ -14,6 +14,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+eval $(thefuck --alias)
+PS1="┌ \u: \W\n└─ \$ "
 
 PS1="┌ \u: \W\n└─ \$ "
 # Powerline daemon
@@ -35,6 +37,9 @@ export JAVA_HOME
 
 ANT_HOME=/usr/share/ant
 export ANT_HOME
+
+ANDROID_HOME=$HOME/.local/bin/
+export ANDROID_HOME
 
 PATH=$PATH:$JAVA_HOME/bin
 PATH=$PATH:$ANT_HOME/bin

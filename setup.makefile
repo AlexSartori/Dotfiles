@@ -7,12 +7,14 @@ all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software
 
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
-	cp bash/.bash{rc,_alises,_profile} ~/
+	cp conf/.bash{rc,_alises,_profile} ~/
 	cp conf/.vimrc ~/.vimrc
 	cp conf/gruvbox.vim ~/.vim/colors/
 	cp conf/.gitconfig ~/.gitconfig
-	cp -r conf/i3* ~/.config/
+	cp -r conf/{i3,i3lock,i3status} ~/.config/
 	cp templates/* ~/Templates/
+	cp -r conf/powerline ~/.config/
+	cp -r conf/fish ~/.config
 
 hosts-file:
 	@echo -e "\n\n$(BOLD)### HOSTS-FILE$(RST)"
@@ -23,7 +25,7 @@ hosts-file:
 
 fonts:
 	@echo -e "\n\n$(BOLD)### FONTS$(RST)"
-	sudo cp -r fonts/* /usr/share/fonts/
+	sudo cp -r fonts/* ~/.local/share/fonts/
 	fc-cache -f -v > /dev/null # Refresh font cache
 
 gimp-brushes:
@@ -32,7 +34,7 @@ gimp-brushes:
 
 dnf-repos:
 	@echo -e "\n\n$(BOLD)### DNF-REPOS$(RST)"
-	sudo dnf install rpmfusion-free-release rpmfusion-nonfree-release
+	sudo dnf install -y rpmfusion-free-release rpmfusion-nonfree-release
 	sudo dnf copr enable \
 		mosquito/brackets\
 		mosquito/atom\
@@ -47,5 +49,6 @@ dnf-software:
 	@cp "dnf-software" /tmp/dnfsoft
 	vim /tmp/dnfsoft
 	xargs --arg-file="/tmp/dnfsoft" sudo dnf install
-	#gem install lolcat
+	#gem install lolcat lolcommits
+	#pip install thefuck
 	#sudo cp other/whatsapp.desktop /usr/share/applications/

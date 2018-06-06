@@ -31,7 +31,10 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator # i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# Chrome
+bindsym $mod+w exec vivladi-stable
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -78,7 +81,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -105,6 +108,9 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# press same $mod+workspace to get back to previous
+workspace_auto_back_and_forth yes
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -122,7 +128,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -173,17 +179,23 @@ bar {
 bindsym $mod+b bar mode toggle
 
 # exec --no-startup-id gnome-settings-daemon
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 # exec --no-startup-id gnome-sound-applet
 
+exec --no-startup-id setxkbmap -option "ctrl:swapcaps"
+exec --no-startup-id setxkbmap it
+exec --no-startup-id feh --bg-scale /home/alex/.config/i3/wall.jpg # Pictures/met.jpeg 
 
-bindsym $mod+l exec i3lock -e -i /home/alex/Pictures/jelly4.png # -c 000000
+bindsym $mod+l exec i3lock -e -i /home/alex/.config/i3lock/wall.png # -c 000000
 # bindcode 224 exec xdotool key XF86MonBrightnessDown
 # bindcode 225 exec xdotool key XF86MonBrightnessUp
 
-# bindcode 115 exec amixer set 'Master' 5%+
-# bindcode 114 exec amixer set 'Master' 5%-
-# bindcode 113 exec amixer set 'Master' 0%
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
+bindcode 115 exec amixer set 'Master' 5%+
+bindcode 114 exec amixer set 'Master' 5%-
+bindcode 113 exec amixer set 'Master' 0%
 
 hide_edge_borders both
 new_window normal
