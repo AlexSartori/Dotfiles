@@ -3,13 +3,13 @@ RST=$(shell tput sgr0)
 
 .PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software
 
-all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software
+all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software 
 
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
-	cp conf/.bash{rc,_alises,_profile} ~/
+	cp conf/.bash{rc,_aliases,_profile} ~/
 	cp conf/.vimrc ~/.vimrc
-	cp conf/gruvbox.vim ~/.vim/colors/
+	mkdir -p ~/.vim/colors && cp conf/gruvbox.vim ~/.vim/colors/
 	cp conf/.gitconfig ~/.gitconfig
 	cp -r conf/{i3,i3lock,i3status} ~/.config/
 	cp templates/* ~/Templates/
@@ -18,14 +18,14 @@ conf-files:
 
 hosts-file:
 	@echo -e "\n\n$(BOLD)### HOSTS-FILE$(RST)"
-	# wget -q https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-	sudo mv /etc/hosts /etc/hosts.old
-	sudo mv conf/hosts /etc/hosts
+	wget -q https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+	# sudo mv /etc/hosts /etc/hosts.old
+	sudo mv hosts /etc/hosts
 	sudo systemctl restart NetworkManager # Empty DNS cache
 
 fonts:
 	@echo -e "\n\n$(BOLD)### FONTS$(RST)"
-	sudo cp -r fonts/* ~/.local/share/fonts/
+	sudo cp -r fonts/* /usr/share/fonts/
 	fc-cache -f -v > /dev/null # Refresh font cache
 
 gimp-brushes:
@@ -34,6 +34,7 @@ gimp-brushes:
 
 dnf-repos:
 	@echo -e "\n\n$(BOLD)### DNF-REPOS$(RST)"
+	# https://rpmfusion.org/
 	sudo dnf install -y rpmfusion-free-release rpmfusion-nonfree-release
 	sudo dnf copr enable \
 		mosquito/brackets\
@@ -52,3 +53,4 @@ dnf-software:
 	#gem install lolcat lolcommits
 	#pip install thefuck
 	#sudo cp other/whatsapp.desktop /usr/share/applications/
+
