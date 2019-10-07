@@ -1,9 +1,9 @@
 BOLD=$(shell tput bold)
 RST=$(shell tput sgr0)
 
-.PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software
+.PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software
 
-all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software 
+all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software
 
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
@@ -36,7 +36,7 @@ dnf-repos:
 	@echo -e "\n\n$(BOLD)### DNF-REPOS$(RST)"
 	# https://rpmfusion.org/
 	sudo dnf install -y rpmfusion-free-release rpmfusion-nonfree-release
-	sudo dnf copr enable \
+	# sudo dnf copr enable \
 		mosquito/brackets\
 		mosquito/atom\
 		heikoada/gtk-themes\
@@ -53,4 +53,11 @@ dnf-software:
 	#gem install lolcat lolcommits
 	#pip install thefuck
 	#sudo cp other/whatsapp.desktop /usr/share/applications/
+
+other-software:
+	@echo -e "\n\n$(BOLD)### OTHER SOFTWARE$(RST)"
+	# Let the user edit the software list and install
+	@cp "other-software" /tmp/othsoft
+	vim /tmp/othsoft
+	sh /tmp/othsoft
 

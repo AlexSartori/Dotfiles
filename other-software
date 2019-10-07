@@ -1,0 +1,5 @@
+gem install lolcat lolcommits
+pip install thefuck
+
+echo "  !!!  [ULauncher] See https://ulauncher.io/"
+echo "  !!!  [Atom] See https://atom.io/"
