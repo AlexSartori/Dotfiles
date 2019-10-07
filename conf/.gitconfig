@@ -3,6 +3,7 @@
 [user]
 	email = alex.sartori1997@gmail.com
 	name = Alex Sartori
+	signingkey = 37C1BEB2A0EC45B0
 [help]
 	autocorrect = 10
 [push]
@@ -15,3 +16,7 @@
 	unstage = "reset HEAD --"
 	tree = log --graph --decorate --pretty=oneline\n--abbrev-commit
 	last = log -1 HEAD
+[commit]
+        gpgSign = true
+[gpg]
+        program = gpg2
