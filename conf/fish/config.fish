@@ -15,4 +15,6 @@ set dl /home/alex/Downloads
 
 # Aliases
 alias cat=lolcat
-# alias dusg="du -sh * | sort -hr"
+alias dusg="du -sh * | sort -hr"
+alias bat="/home/alex/Software/bat-v0.8.0-x86_64-unknown-linux-gnu/bat"
+alias giacomino_scarricamelo="youtube-dl"
