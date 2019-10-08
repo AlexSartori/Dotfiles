@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Whatsapp
-Exec=vivaldi-stable --password-store=basic --app=https://web.whatsapp.com/
-Type=Application
-Icon=web-whatsapp

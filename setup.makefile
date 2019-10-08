@@ -1,9 +1,9 @@
 BOLD=$(shell tput bold)
 RST=$(shell tput sgr0)
 
-.PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software
+.PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software finalize
 
-all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software
+all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software finalize
 
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
@@ -60,4 +60,9 @@ other-software:
 	@cp "other-software" /tmp/othsoft
 	vim /tmp/othsoft
 	sh /tmp/othsoft
+
+finalize:
+	@echo -e "\n\n$(BOLD)### FINALIZING$(RST)"
+	@echo "Extra configuration files to copy/use can be found in: $(PWD)/extra_files"
+	@echo -e "\n\n$(BOLD)### END$(RST)"
 
