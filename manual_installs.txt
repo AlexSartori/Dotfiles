@@ -1,0 +1,10 @@
+Arduino IDE
+Netbeans
+Jetbrains Toolbox
+Lightworks
+Rhinoceros
+yEd
+xdgurl
+even-better-ls
+ULauncer
+Spotify
