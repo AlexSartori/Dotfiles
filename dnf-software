@@ -1,12 +1,14 @@
+#
+# Edit this list with the packages you want to pass to 'dnf install',
+# delete these comments, save this file and quit.
+#
+
 adobe-source-code-pro-fonts
 android-tools
-antimicro
 ardour5
-atom
 audacity
 blender
 bless
-brackets
 calibre
 chrome-gnome-shell
 cool-retro-term
@@ -41,7 +43,6 @@ i3lock
 ImageMagick
 inkscape
 insync
-intel-graphics-update-tool
 iotop
 kde-connect
 lmms
@@ -59,11 +60,9 @@ qjackctl
 qucs
 redshift
 screen
-skypeforlinux
 spotify-client
 steam
 stellarium
-telegram-desktop
 texmaker
 tigervnc-server
 tmux-powerline
