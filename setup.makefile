@@ -3,7 +3,7 @@ RST=$(shell tput sgr0)
 
 .PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software finalize
 
-all: conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software finalize
+all: hosts-file fonts dnf-repos dnf-software other-software conf-files gimp.brushes finalize
 
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
@@ -34,31 +34,28 @@ gimp-brushes:
 
 dnf-repos:
 	@echo -e "\n\n$(BOLD)### DNF-REPOS$(RST)"
-	# https://rpmfusion.org/
-	sudo dnf install -y rpmfusion-free-release rpmfusion-nonfree-release
+	sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(shell rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(shell rpm -E %fedora).noarch.rpm
 	# sudo dnf copr enable \
-		mosquito/brackets\
-		mosquito/atom\
-		heikoada/gtk-themes\
-		ribenakid/puzzles\
-		cygn/pulseaudio-dlna
+	#	rommon/telegram
+	#	mosquito/brackets\
+	#	mosquito/atom\
+	#	heikoada/gtk-themes\
+	#	ribenakid/puzzles\
+	#	cygn/pulseaudio-dlna
 	sudo cp repos/* /etc/yum.repos.d/
 
 dnf-software:
 	@echo -e "\n\n$(BOLD)### DNF-SOFTWARE$(RST)"
 	# Let the user edit the software list and install
 	@cp "dnf-software" /tmp/dnfsoft
-	vim /tmp/dnfsoft
+	vi /tmp/dnfsoft
 	xargs --arg-file="/tmp/dnfsoft" sudo dnf install
-	#gem install lolcat lolcommits
-	#pip install thefuck
-	#sudo cp other/whatsapp.desktop /usr/share/applications/
 
 other-software:
 	@echo -e "\n\n$(BOLD)### OTHER SOFTWARE$(RST)"
 	# Let the user edit the software list and install
 	@cp "other-software" /tmp/othsoft
-	vim /tmp/othsoft
+	vi /tmp/othsoft
 	sh /tmp/othsoft
 
 finalize:

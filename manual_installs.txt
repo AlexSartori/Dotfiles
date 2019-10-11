@@ -1,3 +1,4 @@
+Antimicro
 Arduino IDE
 Netbeans
 Jetbrains Toolbox
@@ -8,3 +9,4 @@ xdgurl
 even-better-ls
 ULauncer
 Spotify
+Telegram (https://desktop.telegram.org/)

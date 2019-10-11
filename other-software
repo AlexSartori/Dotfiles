@@ -1,2 +1,7 @@
-gem install lolcat lolcommits
+#
+# Edit this list with the packages you want to install,
+# then save this file and quit.
+#
+
+sudo gem install lolcat lolcommits
 pip install thefuck
