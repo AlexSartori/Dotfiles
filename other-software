@@ -3,5 +3,11 @@
 # then save this file and quit.
 #
 
+# Ruby packages
 sudo gem install lolcat lolcommits
+
+# Pip packages
 pip install thefuck
+
+# Atom extensions
+apm install file-icons emmet highlight-selected
