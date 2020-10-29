@@ -10,3 +10,6 @@ even-better-ls
 ULauncer
 Spotify
 Telegram (https://desktop.telegram.org/)
+
+# GNOME Extensions:
+dash-to-dock gse-sound-output-device-chooser gsconnect transparent-top-bar hidetopbar gTile clipboard-indicator
