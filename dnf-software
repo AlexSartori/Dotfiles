@@ -18,6 +18,8 @@ dconf-editor
 deja-dup
 desmume
 devede
+dia
+discord
 easytag
 exfat-utils
 feh
@@ -31,10 +33,12 @@ gdb
 gimp
 git
 gitstats
+gnome-sudoku
 gnome-tweak-tool
 gpick
 gstreamer*
 guitarix
+homebank
 hydrogen
 htop
 hugin
@@ -52,10 +56,11 @@ musescore
 nethogs
 network-manager-applet
 nmap
+peek
 powerline
 powertop
 progress
-pulseaudio-equalizer
+pulseeffects
 qjackctl
 qucs
 redshift
