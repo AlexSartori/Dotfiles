@@ -17,6 +17,6 @@
 	tree = log --graph --decorate --pretty=oneline\n--abbrev-commit
 	last = log -1 HEAD
 [commit]
-        gpgSign = true
+        gpgSign = false
 [gpg]
         program = gpg2

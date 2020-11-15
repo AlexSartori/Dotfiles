@@ -11,3 +11,6 @@ pip install thefuck
 
 # Atom extensions
 apm install file-icons emmet highlight-selected
+
+# Calibre
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin

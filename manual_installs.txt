@@ -1,5 +1,6 @@
 Antimicro
 Arduino IDE
+Atom (https://atom.io)
 CubeIDE
 Netbeans
 Jetbrains Toolbox
@@ -9,7 +10,6 @@ yEd
 xdgurl
 even-better-ls
 ULauncer
-Spotify
 Telegram (https://desktop.telegram.org/)
 
 # GNOME Extensions:

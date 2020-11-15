@@ -3,7 +3,7 @@ RST=$(shell tput sgr0)
 
 .PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software finalize
 
-all: hosts-file fonts dnf-repos dnf-software other-software conf-files gimp.brushes finalize
+all: hosts-file fonts dnf-repos dnf-software other-software conf-files gimp-brushes finalize
 
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
