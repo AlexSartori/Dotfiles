@@ -30,7 +30,7 @@ fonts:
 
 gimp-brushes:
 	@echo -e "\n\n$(BOLD)### GIMP-BRUSHES$(RST)"
-	cp -r gimp_brushes/* ~/.gimp-*/brushes
+	cp -r gimp_brushes/* ~/.config/GIMP/2.10/brushes/
 
 dnf-repos:
 	@echo -e "\n\n$(BOLD)### DNF-REPOS$(RST)"
