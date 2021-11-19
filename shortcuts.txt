@@ -2,3 +2,4 @@ Home Folder	Meta + E
 Web Browser	Meta + W
 Terminal	Meta + Enter
 Telegram	Meta + T
+Spotify		Meta + S
