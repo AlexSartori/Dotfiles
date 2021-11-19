@@ -9,12 +9,13 @@ conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
 	cp conf/.bash{rc,_aliases,_profile} ~/
 	cp conf/.vimrc ~/.vimrc
-	mkdir -p ~/.vim/colors && cp conf/gruvbox.vim ~/.vim/colors/
+	mkdir -p ~/.vim/colors && cp conf/badwolf.vim ~/.vim/colors/
 	cp conf/.gitconfig ~/.gitconfig
 	cp -r conf/{i3,i3lock,i3status} ~/.config/
 	cp templates/* ~/Templates/
 	cp -r conf/powerline ~/.config/
 	cp -r conf/fish ~/.config
+	cp conf/redshift.conf ~/.config/
 
 hosts-file:
 	@echo -e "\n\n$(BOLD)### HOSTS-FILE$(RST)"
