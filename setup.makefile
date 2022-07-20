@@ -11,7 +11,7 @@ conf-files:
 	cp conf/.vimrc ~/.vimrc
 	mkdir -p ~/.vim/colors && cp conf/badwolf.vim ~/.vim/colors/
 	cp conf/.gitconfig ~/.gitconfig
-	cp -r conf/{i3,i3lock,i3status} ~/.config/
+	cp -r conf/{i3,i3lock,polybar} ~/.config/
 	cp templates/* ~/Templates/
 	cp -r conf/powerline ~/.config/
 	cp -r conf/fish ~/.config

@@ -1,0 +1,51 @@
+[bar/base]
+; Position
+bottom = true
+width = 100%
+height = 20
+offset-x = 0
+offset-y = 0
+
+; IPC
+enable-ipc = true
+
+; Style
+font-0 = Iosevka:size=12;3
+font-1 = Iosevka:size=18;5
+font-2 = Iosevka:size=28;7
+background = #001
+foreground = #fff
+padding = 0
+module-margin = 0
+
+; Other
+locale = en_US.UTF-8
+
+
+[bar/bar1]
+inherit = bar/base
+monitor = eDP-1 
+
+; System tray
+tray-position = right
+tray-max-size = 6
+tray-background = ${root.background}
+tray-padding = 5
+
+; Modules
+include-file = $HOME/.config/polybar/modules.ini
+
+; i3 specific
+override-redirect = true
+wm-restack = i3
+
+[bar/bar2]
+inherit = bar/base
+monitor = HDMI-1
+
+; Modules
+include-file = $HOME/.config/polybar/modules-secondary.ini
+
+; i3 specific
+override-redirect = true
+wm-restack = i3
