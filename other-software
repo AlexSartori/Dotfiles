@@ -14,3 +14,8 @@ apm install file-icons emmet highlight-selected
 
 # Calibre
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+# Low battery notification
+wget https://github.com/rjekker/i3-battery-popup/raw/master/i3-battery-popup -o $HOME/.local/bin/i3-battery-popup
+chmod +x $HOME/.local/bin/i3-battery-popup
+
