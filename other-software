@@ -19,3 +19,5 @@ sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | 
 wget https://github.com/rjekker/i3-battery-popup/raw/master/i3-battery-popup -O $HOME/.local/bin/i3-battery-popup
 chmod +x $HOME/.local/bin/i3-battery-popup
 
+# PIP packages
+pip install --user numpy matplotlib ranger-fm scipy thefuck
