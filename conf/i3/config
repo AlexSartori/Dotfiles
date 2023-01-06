@@ -168,7 +168,7 @@ bindsym $mod+g exec gimp
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec rofi -show run -modi run
+bindsym $mod+d exec rofi -show drun -modi drun
 
 
 # Other keybindings
@@ -183,8 +183,9 @@ bindsym $mod+l exec i3lock -e -c 000000 # -i /home/alex/.config/i3lock/wall.png
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
-# Screenshots
+# Mixed key bindings
 bindsym Print exec flameshot gui
+bindsym $mod+n exec dunstctl close-all
 
 # Audio and media playback
 bindsym $mod+$alt+Up exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -215,8 +216,7 @@ exec --no-startup-id sh ~/.xinitrc
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-sound-applet
-exec --no-startup-id i3-battery-popup -n
 
+exec --no-startup-id i3-battery-popup -n &
 exec --no-startup-id redshift-gtk &
 exec --no-startup-id ~/Software/Telegram/Telegram -startintray &
-exec --no-startup-id kdeconnect-indicator &
