@@ -36,6 +36,11 @@ set -x JAVA_HOME /usr/lib/jvm/java-18-openjdk
 set -x ANDROID_HOME $XDG_DATA_HOME/android
 set -x ATOM_HOME $XDG_DATA_HOME/atom
 set -x GEM_HOME $XDG_DATA_HOME/gem
+set -x GNUPGHOME $XDG_DATA_HOME/gnupg
+set -x GRADLE_USER_HOME $XDG_DATA_HOME/gradle
+set -x GTK2_RC_FILES $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+set -x JUPYTER_CONFIG_DIR $XDG_CONFIG_HOME/jupyter
+set -x WINEPREFIX $XDG_DATA_HOME/wine32
 set RBENV_HOME /home/alex/Software/rbenv
 set RBBUILD $RBENV_HOME/plugins/ruby-build/bin
 set -x RBENV_ROOT $XDG_DATA_HOME/rbenv
