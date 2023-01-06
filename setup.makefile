@@ -10,7 +10,7 @@ conf-files:
 	cp conf/.bash{rc,_aliases,_profile} ~/
 	cp conf/.vimrc ~/.vimrc
 	mkdir -p ~/.vim/colors && cp conf/badwolf.vim ~/.vim/colors/
-	cp conf/.gitconfig ~/.gitconfig
+	cp conf/gitconfig ~/.config/git/config
 	cp -r conf/{i3,i3lock,polybar} ~/.config/
 	cp templates/* ~/Templates/
 	cp -r conf/powerline ~/.config/

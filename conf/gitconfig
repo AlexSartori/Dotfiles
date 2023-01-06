@@ -1,0 +1,29 @@
+[core]
+	editor = vim
+[user]
+	email = alex.sartori1997@gmail.com
+	name = Alex Sartori
+	signingkey = 9B59EAD25672B798
+[help]
+	autocorrect = 10
+[push]
+	default = tracking
+	autoSetupRemote = true
+[alias]
+	co = checkout
+	br = branch
+	cm = "commit -m"
+	s = status
+	ph = push
+	pl = pull
+	unstage = "reset HEAD --"
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	last = log -1 HEAD
+[commit]
+    gpgSign = true
+[gpg]
+    program = gpg2
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true
