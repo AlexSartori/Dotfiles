@@ -1,15 +1,10 @@
-Antimicro
-Arduino IDE
+Arduino IDE (https://www.arduino.cc/en/software)
 Atom (https://atom.io)
-CubeIDE
-Netbeans
 Jetbrains Toolbox
 Lightworks
 Rhinoceros
-yEd
 xdgurl
-even-better-ls
-ULauncer
+even-better-ls (https://github.com/mnurzia/even-better-ls)
 Telegram (https://desktop.telegram.org/)
 
 # GNOME Extensions:
