@@ -1,9 +1,9 @@
 BOLD=$(shell tput bold)
 RST=$(shell tput sgr0)
 
-.PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software finalize
+.PHONY: all conf-files hosts-file fonts gimp-brushes dnf-repos dnf-software other-software snap-software finalize
 
-all: hosts-file fonts dnf-repos dnf-software other-software conf-files gimp-brushes finalize
+all: conf-files hosts-file fonts dnf-repos dnf-software other-software gimp-brushes snap-software finalize
 
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
@@ -58,6 +58,13 @@ other-software:
 	@cp "other-software" /tmp/othsoft
 	vi /tmp/othsoft
 	sh /tmp/othsoft
+
+snap-software:
+	@echo -e "\n\n$(BOLD)### SNAP SOFTWARE$(RST)"
+	# Let the user edit the software list and install
+	@cp "snap-software" /tmp/snapw
+	vi /tmp/snapsw
+	sh /tmp/snapsw
 
 finalize:
 	@echo -e "\n\n$(BOLD)### FINALIZING$(RST)"
