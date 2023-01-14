@@ -2,4 +2,4 @@ sudo dnf install snapd
 sudo ln -s /var/lib/snapd/snap /snap
 
 sudo snap install netbeans --classic
-sudo snap install spotify
+sudo snap install spotify glow

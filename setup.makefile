@@ -5,12 +5,16 @@ RST=$(shell tput sgr0)
 
 all: conf-files hosts-file fonts dnf-repos dnf-software other-software gimp-brushes snap-software finalize
 
+release := $(shell rpm -E %fedora)
+
+
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
 	cp conf/.bash{rc,_aliases,_profile} ~/
 	cp conf/.vimrc ~/.vimrc
 	mkdir -p ~/.vim/colors && cp conf/badwolf.vim ~/.vim/colors/
-	cp conf/gitconfig ~/.config/git/config
+	mkdir -p ~/.config/git && cp conf/gitconfig ~/.config/git/config
+	mkdir -p ~/.config/dunst && cp conf/dunstrc ~/.config/dunst/
 	cp -r conf/{i3,i3lock,polybar} ~/.config/
 	cp templates/* ~/Templates/
 	cp -r conf/powerline ~/.config/
@@ -23,6 +27,7 @@ hosts-file:
 	# sudo mv /etc/hosts /etc/hosts.old
 	sudo mv hosts /etc/hosts
 	sudo systemctl restart NetworkManager # Empty DNS cache
+	sleep 5 # Wait for nm to restart
 
 fonts:
 	@echo -e "\n\n$(BOLD)### FONTS$(RST)"
@@ -35,14 +40,7 @@ gimp-brushes:
 
 dnf-repos:
 	@echo -e "\n\n$(BOLD)### DNF-REPOS$(RST)"
-	sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(shell rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(shell rpm -E %fedora).noarch.rpm
-	# sudo dnf copr enable \
-	#	rommon/telegram
-	#	mosquito/brackets\
-	#	mosquito/atom\
-	#	heikoada/gtk-themes\
-	#	ribenakid/puzzles\
-	#	cygn/pulseaudio-dlna
+	sudo dnf install "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(release).noarch.rpm" "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(release).noarch.rpm"
 	sudo cp repos/* /etc/yum.repos.d/
 
 dnf-software:

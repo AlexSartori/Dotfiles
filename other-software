@@ -21,3 +21,6 @@ chmod +x $HOME/.local/bin/i3-battery-popup
 
 # PIP packages
 pip install --user numpy matplotlib ranger-fm scipy thefuck
+
+# even-better-ls
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/n0nvme/even-better-ls/master/install.sh)"

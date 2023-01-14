@@ -12,6 +12,7 @@ arm-none-eabi-gcc-cs
 arm-none-eabi-newlib
 asciiquarium
 audacity
+bat
 binwalk
 blender
 bless
@@ -55,6 +56,7 @@ gnome-tweaks
 gpick
 gstreamer*
 guitarix
+gv
 homebank
 hydrogen
 htop
@@ -68,6 +70,7 @@ iotop
 kde-connect
 kdenlive
 lmms
+lxappearance
 megasync
 meld
 musescore
@@ -76,6 +79,7 @@ nethogs
 network-manager-applet
 nmap
 nodejs
+nomacs
 npm
 numix-gtk-theme
 numix-icon-theme
@@ -93,10 +97,11 @@ python3-devel
 qalculate
 qjackctl
 qucs
-redshift
+redshift-gtk
+rofi
 ruby
 screen
-spotify-client
+seahorse
 steam
 stellarium
 supertuxkart
@@ -123,4 +128,3 @@ xorg-x11-drv-nvidia-cuda-libs
 xournalpp
 xset
 youtube-dl
-zerotier-one
