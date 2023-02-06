@@ -8,9 +8,6 @@ set -x -g XDG_CACHE_HOME $HOME/.cache
 source /usr/share/powerline/fish/powerline-setup.fish
 powerline-setup
 
-# The Fuck
-thefuck --alias | source
-
 # Print logo
 set fish_greeting # Suppress default greeting
 fish_logo cyan blue white
@@ -25,6 +22,7 @@ alias dl=cd /home/alex/Downloads
 alias adb="/home/alex/Software/platform-tools/adb"
 alias iten="trans -s it -t en"
 alias enit="trans -s en -t it"
+alias r=ranger
 
 # Hacky alias for atom because bugs
 function atom

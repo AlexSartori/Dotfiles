@@ -159,10 +159,10 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # ------------------------------------------------------------------------------
 
 bindsym $mod+w exec firefox
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec alacritty
 bindsym $mod+s exec spotify
 bindsym $mod+e exec thunar
-bindsym $mod+t exec ~/Software/Telegram/Telegram
+bindsym $mod+t exec telegram-desktop
 bindsym $mod+g exec gimp
 
 # start dmenu (a program launcher)
