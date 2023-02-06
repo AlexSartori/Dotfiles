@@ -15,15 +15,24 @@ associations="
     ./conf/polybar/custom_modules/polybar-kdeconnect.sh;$HOME/.config/polybar/custom_modules/polybar-kdeconnect.sh
     ./conf/polybar/custom_modules/scroll_spotify_status.sh;$HOME/.config/polybar/custom_modules/scroll_spotify_status.sh
     ./conf/polybar/custom_modules/polybar-lmsensors_linux_amd64;$HOME/.config/polybar/custom_modules/polybar-lmsensors_linux_amd64
+    ./conf/powerline/themes/shell/custom.json;$HOME/.config/powerline/themes/shell/custom.json
+    ./conf/powerline/config.json;$HOME/.config/powerline/config.json
+    ./conf/.bash_aliases;$HOME/.bash_aliases
+    ./conf/.bashrc;$HOME/.bashrc
+    ./conf/.vimrc;$HOME/.vim/vimrc
+    ./conf/badwolf.vim;$HOME/.vim/colors/badwolf.vim
+    ./conf/dunstrc;$HOME/.config/dunst/dunstrc
+    ./conf/gitconfig;$HOME/.config/git/config
+    ./conf/redshift.conf;$HOME/.config/redshift.conf
 "
 
 echo "This script will check for diffs between the files in this repo and the ones currently in use by the system."
 
 for x in $associations; do
-    IFS=";" read -r file_sys file_repo <<< $x
+    IFS=";" read -r file_repo file_sys <<< $x
     echo -e "\nComparing:"
-    echo "    System file:  $BOLD$file_sys$RST"
-    echo "    Current file: $BOLD$file_repo$RST"
+    echo "    Repo file   ->  $BOLD$file_repo$RST"
+    echo "    System file ->  $BOLD$file_sys$RST"
 
     while true; do
         diff $file_sys $file_repo > /dev/null
@@ -48,7 +57,7 @@ for x in $associations; do
                 cp $file_sys $file_repo
                 cont=false
             ;;
-            'd') diff -y --color='always' $file_sys $file_repo | less -R ;;
+            'd') diff -y --color='always' $file_repo $file_sys | less -R ;;
             'm') meld $file_repo $file_sys ;;
             'i')
                 echo "    Skipping"

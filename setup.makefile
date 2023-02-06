@@ -11,8 +11,8 @@ release := $(shell rpm -E %fedora)
 conf-files:
 	@echo -e "\n\n$(BOLD)### CONF-FILES$(RST)"
 	cp conf/.bash{rc,_aliases,_profile} ~/
-	cp conf/.vimrc ~/.vimrc
 	mkdir -p ~/.vim/colors && cp conf/badwolf.vim ~/.vim/colors/
+	cp conf/.vimrc ~/.vim/vimrc
 	mkdir -p ~/.config/git && cp conf/gitconfig ~/.config/git/config
 	mkdir -p ~/.config/dunst && cp conf/dunstrc ~/.config/dunst/
 	cp -r conf/{i3,i3lock,polybar} ~/.config/
